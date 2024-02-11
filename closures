@@ -1,0 +1,41 @@
+<?php
+$number = 89;
+ 
+$showNumber = function()
+{
+    echo $number;
+};
+ 
+$showNumber();
+?>
+
+try
+{
+    // код, который может вызвать исключение
+    $a = 5;
+    $b = 0;
+    $result = $a / $b;
+    echo $result;
+}
+catch(DivisionByZeroError $ex)
+{
+    // обработка исключения
+    echo "Произошло исключение:<br>";
+    echo $ex . "<br>";
+}
+echo "Конец работы программы";
+
+
+try
+{
+    $result = 5 / 0;
+    echo $result;
+}
+catch(ParseError $p)
+{
+    echo "Произошла ошибка парсинга";
+}
+catch(DivisionByZeroError $d)
+{
+    echo "На ноль делить нельзя";
+}
